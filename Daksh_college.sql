@@ -130,5 +130,67 @@ SELECT city FROM STUDENT WHERE grade = "O" GROUP BY city;
 
 
 
+-- ------------------
+-- ALTER COMMAND    |
+-- ------------------
+ALTER TABLE STUDENT                -- (THIS COMMAND IS USED TO ADD/DELETE AND CUSTOMIZE TABLES OF DATABASE)
+ADD COLUMN age INT NOT NULL DEFAULT 17;
+-- DROP COLUMN age;
+-- RENAME TO STU;      (USED TO CHANGE THE NAME OF TABLE)
+
+SELECT * FROM STUDENT;
+
+
+
+-- ---------------------------------------------
+-- Table Related Query: TRUNCATE COMMAND       |         [DROP DELETES COMPLETE TABLE & TRUNCATE DELETES ONLY DATA OF TABLE]
+-- ---------------------------------------------
+TRUNCATE TABLE STUDENT;
+SELECT * FROM STUDENT;
+
+
+
+
+-- --------------------------------------------------------------------
+-- PRACTICE QUESTIONS
+
+-- TO CHANGE THE NAME OF COLUMN:
+ALTER TABLE STUDENT
+CHANGE name full_name VARCHAR(50);
+
+
+-- to delete data of student who scored less than 80:
+DELETE FROM STUDENT
+WHERE marks < 80;
+
+
+-- to delete column of grade:
+ALTER TABLE STUDENT
+DROP COLUMN grade;
+
+SELECT * FROM STUDENT;
+-- -------------------------------------------------------------------------------------
+
+
+
+
+-- ----------------------
+-- SUB QUERIES          |
+-- ----------------------
+SELECT full_name, rollno FROM STUDENT WHERE rollno%2 = 0;
+SELECT * FROM STUDENT WHERE city = "Delhi";
+
+
+
+-- ----------------
+-- MYSQL: VIEWS   |
+-- ----------------
+CREATE VIEW view1 AS
+SELECT rollno, full_name, marks FROM STUDENT;
+
+SELECT * FROM view1 WHERE marks >= 89;
+
+
+
 
 
