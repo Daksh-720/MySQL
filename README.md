@@ -8,3 +8,8 @@ SQL DataTypes
 SELECT Command
 INSERT Command
 // Practice Questions //
+Having Clause
+General Order of Commands
+UPDATE Command
+DELETE Command
+Cascading Foreign Keys
