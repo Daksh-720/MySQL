@@ -13,3 +13,10 @@ General Order of Commands
 UPDATE Command
 DELETE Command
 Cascading Foreign Keys
+ALTER Command
+CHANGE and MODIFY Commands
+TRUNCATE Command
+JOINS in SQL
+UNION in SQL
+SQL Sub Queries
+MySQL Views
