@@ -120,8 +120,15 @@ FROM stud;
 
 select ROUND(AVG(mark),4) from marks;
 
+select * from stud;
+
 select max(mark)-min(mark) from marks;
 
 SELECT id, name FROM stud WHERE location = 'Mumbai'
 UNION
 SELECT id, name FROM stud WHERE location = 'Navi Mumbai';
+
+INSERT INTO stud (id, name, location, dob) VALUE (16, 'Shreeya', 'Mumbai', '2009-08-05');
+INSERT INTO marks (m_id, mark) VALUE (16, NULL);
+
+SELECT stud.id, stud.name, marks.m_id FROM stud INNER JOIN marks ON stud.id = marks.m_id WHERE mark IS NULL;
