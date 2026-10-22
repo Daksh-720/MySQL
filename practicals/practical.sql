@@ -70,7 +70,7 @@ SELECT DISTINCT location FROM stud;       -- selects unique loactions
 
 Select * from stud ORDER BY name ASC;
 SELECT * FROM stud ORDER BY id DESC LIMIT 5;
-SELECT * FROM stud ORDER BY id ASC limit 5 OFFSET 2;   -- offset skips the number of elements entered its only used after limit clause
+SELECT * FROM stud ORDER BY id ASC limit 5 OFFSET 2;   -- offset skips the number of elements entered, its only used after limit clause
 
 SELECT * FROM stud WHERE location = "Mumbai" AND id > 5;
 
@@ -132,3 +132,19 @@ INSERT INTO stud (id, name, location, dob) VALUE (16, 'Shreeya', 'Mumbai', '2009
 INSERT INTO marks (m_id, mark) VALUE (16, NULL);
 
 SELECT stud.id, stud.name, marks.m_id FROM stud INNER JOIN marks ON stud.id = marks.m_id WHERE mark IS NULL;
+
+SELECT name, LPAD(name,length(name)+1, '*') from stud;
+
+select concat(name, " is in ", location) from stud;
+
+select name, lpad(name, 1, '*') from stud;
+
+select name, LEFT(name,1), ASCII(LEFT(name,1)) from stud;
+
+SELECT name, REVERSE(name) FROM stud;
+
+SELECT * FROM stud LEFT JOIN marks ON stud.id = marks.m_id;
+
+SELECT name, CHAR_LENGTH(LOWER(name)) - CHAR_LENGTH(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LOWER(name), 'a', ''), 'e', ''), 'i', ''), 'o', ''), 'u', '')) AS VOWEL_COUNT FROM stud;
+
+SELECT location, COUNT(name) from stud GROUP BY location HAVING COUNT(name) <5;
