@@ -148,3 +148,9 @@ SELECT * FROM stud LEFT JOIN marks ON stud.id = marks.m_id;
 SELECT name, CHAR_LENGTH(LOWER(name)) - CHAR_LENGTH(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(LOWER(name), 'a', ''), 'e', ''), 'i', ''), 'o', ''), 'u', '')) AS VOWEL_COUNT FROM stud;
 
 SELECT location, COUNT(name) from stud GROUP BY location HAVING COUNT(name) <5;
+
+SELECT *, COALESCE(mark, 'NOT GIVEN') FROM marks;  -- returns the given text in place of null
+
+SELECT *, ISNULL(mark) FROM marks;    -- returns 1 if null value is present
+
+SELECT *, IFNULL(mark, 369) FROM marks;  -- returns the given value in place of null
